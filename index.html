@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Narendran.K</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Pirata+One&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#1a0418;--fg:#ffe9f1;--pk:#ff2d6b;--gd:#ffd36b;--card:rgba(26,4,24,.88)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;padding:0;background:#000;color:var(--fg);font-family:'IM Fell English',Georgia,'Times New Roman',serif;font-size:1.1rem}
+h1,h2,button,th{font-family:'Pirata One','UnifrakturCook',Georgia,serif;font-weight:400;letter-spacing:.03em}
+#scene{position:fixed;inset:0;display:block;width:100vw;height:100vh;z-index:0}
+#hero{height:300vh;position:relative;z-index:1}
+#hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:2;font:14px sans-serif;letter-spacing:.2em;color:var(--gd);animation:b 1.6s infinite}
+@keyframes b{50%{opacity:.35}}
+main{position:relative;z-index:2}
+section{padding:12vh 6vw;background:var(--card);backdrop-filter:blur(6px)}
+#name{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(#0000,var(--card) 35%)}
+#name h1{font-size:clamp(3.5rem,14vw,10rem);margin:0;background:linear-gradient(90deg,var(--pk),var(--gd));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;transform:translateY(40px);transition:1.4s}
+#name p{color:var(--gd);letter-spacing:.3em;font:1rem sans-serif;opacity:0;transition:2s .6s}
+#name.in h1,#name.in p{opacity:1;transform:none}
+h2{font-size:2.8rem;margin:0 0 1.5rem;color:var(--gd)}
+.w{max-width:960px;margin:auto}
+input,textarea,button{font:inherit;background:#0006;color:var(--fg);border:1px solid var(--pk);border-radius:8px;padding:.6rem .9rem}
+button{background:var(--pk);color:#fff;cursor:pointer;border:0}button:hover{filter:brightness(1.15)}
+textarea{width:100%;box-sizing:border-box}
+#ach li{margin:.6rem 0;padding:.7rem 1rem;border-left:3px solid var(--gd);background:#ffffff10;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+#ach{padding:0}
+#ach li button{padding:.1rem .6rem;background:#0000;border:1px solid var(--pk)}
+#gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:1rem}
+#gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:1px solid var(--gd)}
+.ct{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ct div{min-width:0;box-sizing:border-box;padding:1rem;border:1px dashed var(--gd);border-radius:10px}.ct b{display:block;color:var(--pk);font:600 .8rem sans-serif;letter-spacing:.15em}
+.ct span{display:block;margin-top:.3rem;overflow-wrap:anywhere;word-break:break-word}
+#game{text-align:center}
+#cv{width:100%;max-width:900px;background:#12020f;border:2px solid var(--pk);border-radius:12px;touch-action:none}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:1rem 0}
+#hud{font:600 1rem sans-serif;color:var(--gd)}
+table{margin:1rem auto;border-collapse:collapse;min-width:min(520px,100%)}td,th{padding:.4rem .9rem;border-bottom:1px solid #ffffff22}th{color:var(--gd)}
+small{opacity:.7}
+</style></head><body>
+<canvas id="scene"></canvas>
+<div id="hero"></div><div id="hint">SCROLL ↓</div>
+<main>
+<section id="name"><h1>Narendran.K</h1><p>WELCOME TO MY WORLD</p></section>
+
+<section style="padding:8vh 6vw"><blockquote style="max-width:760px;margin:auto;text-align:center;font-family:'Pirata One',Georgia,serif;font-size:clamp(1.8rem,5vw,3rem);line-height:1.2;color:var(--gd)">“Surpass your limits! Right here, right now!”<footer style="font-family:'IM Fell English',Georgia,serif;font-size:1.1rem;color:var(--pk);margin-top:.8rem;background:none;padding:0">— Black Clover</footer></blockquote></section>
+<section><div class="w"><h2>About Me</h2>
+<p style="font:600 .8rem sans-serif;letter-spacing:.2em;color:var(--pk);margin:0">JAPANESE (IN ENGLISH LETTERS)</p><p style="color:var(--gd)"><i>Konnichiwa, watashi wa <b>Narendran.K</b> desu. Ima, SRM Valliammai Engineering College de Konpyuta Saiensu Enjiniaringu (CSE) o benkyo shite imasu.</i></p><p style="color:var(--gd)"><i>Watashi wa AI to kodingu ga totemo suki desu. Mada kodo wa amari wakarimasen ga, ganbatte manabimasu.</i></p><p style="color:var(--gd)"><i>Watashi no webusaito ni kite kurete arigato gozaimasu!</i></p><p style="font:600 .8rem sans-serif;letter-spacing:.2em;color:var(--pk);margin:2rem 0 0">ENGLISH</p><p>Hi, I'm <b style="color:var(--gd)">Narendran.K</b>. I'm currently studying Computer Science Engineering (CSE) at SRM Valliammai Engineering College.</p><p>I'm totally into AI and coding. I don't know much about code yet, but I will do my best to learn and keep getting better every day.</p><p>Thanks for visiting my website!</p></div></section>
+
+<section><div class="w"><h2>Achievements</h2>
+<div class="row" style="justify-content:flex-start"><textarea id="at" rows="2" placeholder="Type an achievement…"></textarea><button id="aa">Add achievement</button></div>
+<ul id="ach"></ul><small>Saved in this browser.</small></div></section>
+
+<section><div class="w"><h2>Pictures</h2>
+<input type="file" id="pf" accept="image/*" multiple><div id="gal"></div>
+<small>Pictures you attach show on this page for this visit only.</small></div></section>
+
+<section><div class="w"><h2>Contact</h2>
+<div class="ct">
+<div><b>EMAIL</b><span><a href="mailto:binarycode01.infra@gmail.com" style="color:var(--gd)">binarycode01.infra@gmail.com</a></span></div>
+<div><b>LOCATION</b><span>Chennai, India</span></div>
+<div><b>GITHUB</b><span><a href="https://github.com/Narendran-developer" target="_blank" rel="noopener" style="color:var(--gd)">github.com/Narendran-developer</a></span></div>
+<div><b>LINKEDIN</b><span><a href="https://www.linkedin.com/in/narendran-developer-569b17402" target="_blank" rel="noopener" style="color:var(--gd)">Narendran Developer</a></span></div>
+</div><!-- EDIT the values above with your real contact info --></div></section>
+
+<section id="game"><div class="w"><h2>Storm Runner — 105 Levels</h2>
+<p>Jump over cactus, duck under birds. Stay focused: speed and obstacles grow every level. Reach level 105 to win!</p>
+<div class="row"><input id="pn" maxlength="20" placeholder="Enter your name"><button id="st">Start Game</button></div>
+<div id="hud">Press Start</div>
+<canvas id="cv" width="900" height="260"></canvas>
+<p><small>Space / ↑ / tap = jump &nbsp; ↓ = duck (hold)</small></p>
+<h2 style="font-size:1.5rem">Who Played</h2>
+<table id="lb"></table><small>Leaderboard is saved in this browser.</small></div></section>
+<footer style="padding:3vh 6vw;text-align:center;background:var(--card);color:var(--gd)">Website created on 10 October 2026 &nbsp;·&nbsp; GitHub: <a href="https://github.com/Narendran-developer" target="_blank" rel="noopener" style="color:var(--pk)">Narendran-developer</a></footer>
+</main>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.143.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.143.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three'
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js'
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js'
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js'
+import {ShaderPass} from 'three/addons/postprocessing/ShaderPass.js'
+import {GammaCorrectionShader} from 'three/addons/shaders/GammaCorrectionShader.js'
+import {CopyShader} from 'three/addons/shaders/CopyShader.js'
+
+const L={NONE:0,TORUS_SCENE:1,BLOOM_SCENE:2,ENTIRE_SCENE:3}
+const hexToVec3=h=>{const n=parseInt(h.slice(1),16);return new THREE.Vector3(((n>>16)&255)/255,((n>>8)&255)/255,(n&255)/255)}
+const canvas=document.getElementById('scene')
+const renderer=new THREE.WebGL1Renderer({canvas,antialias:true})
+renderer.setPixelRatio(devicePixelRatio);renderer.setSize(innerWidth,innerHeight)
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.VSMShadowMap
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x000000);scene.fog=new THREE.Fog(0x000000,0,15)
+const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,0.1,80);camera.position.set(0,0,7);scene.add(camera)
+camera.layers.enable(1);camera.layers.enable(2);camera.layers.enable(3)
+
+const renderScene=new RenderPass(scene,camera)
+const V=()=>new THREE.Vector2(innerWidth,innerHeight)
+const torusComposer=new EffectComposer(renderer);torusComposer.renderToScreen=false
+torusComposer.addPass(renderScene);torusComposer.addPass(new ShaderPass(GammaCorrectionShader))
+torusComposer.addPass(new UnrealBloomPass(V(),0.22,0.2,0));torusComposer.addPass(new ShaderPass(CopyShader))
+const bloomComposer=new EffectComposer(renderer);bloomComposer.renderToScreen=false
+bloomComposer.addPass(renderScene);bloomComposer.addPass(new UnrealBloomPass(V(),0.4,0.55,0));bloomComposer.addPass(new ShaderPass(GammaCorrectionShader))
+
+const FinalPass={uniforms:{iTime:{value:0},tDiffuse:{value:null},torusTexture:{value:null},bloomTexture:{value:null},haloTexture:{value:null},
+uBg:{value:hexToVec3('#1a0418')},uFlameA:{value:hexToVec3('#ff2d6b')},uFlameB:{value:hexToVec3('#ffd36b')},uFlameAmt:{value:0.2}},
+vertexShader:`varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position, 1.0); }`,
+fragmentShader:`uniform float iTime; uniform sampler2D tDiffuse; uniform sampler2D bloomTexture; uniform sampler2D torusTexture; uniform sampler2D haloTexture;
+uniform vec3 uBg; uniform vec3 uFlameA; uniform vec3 uFlameB; uniform float uFlameAmt;
+varying vec2 vUv;
+vec3 warp3d(vec3 pos, float t){ float curv=.8,a=1.9,b=0.7; pos*=2.;
+  pos.x+=curv*sin(t+a*pos.y)+t*b; pos.y+=curv*cos(t+a*pos.x);
+  pos.y+=curv*sin(t+a*pos.z)+t*b; pos.z+=curv*cos(t+a*pos.y);
+  pos.z+=curv*sin(t+a*pos.x)+t*b; pos.x+=curv*cos(t+a*pos.z);
+  return 0.5+0.5*cos(pos.xyz+vec3(1,2,4)); }
+void main(){
+  vec2 uv = 2.*vUv - 1.;
+  vec3 w = pow(warp3d(vec3(uv.x, sin(uv.y), uv.y), iTime*1.5), vec3(1.5));
+  vec3 flame = 1.5*uFlameA*w.x; flame*=w.y; flame += uFlameB*w.z;
+  flame *= smoothstep(0.25, 1., abs(uv.y));
+  float md = smoothstep(-0.7, 1., -uv.y*uv.x); flame *= md*md;
+  vec3 bg = uBg * (1.0 - 0.4 * length(uv));
+  vec3 halo = texture2D(haloTexture, vUv).xyz;
+  gl_FragColor = vec4(bg + flame*uFlameAmt + texture2D(bloomTexture, vUv).xyz + texture2D(torusTexture, vUv).xyz + texture2D(tDiffuse, vUv).xyz + halo, 1.);
+}`}
+const finalComposer=new EffectComposer(renderer);finalComposer.addPass(renderScene)
+const finalPass=new ShaderPass(FinalPass);finalComposer.addPass(finalPass)
+finalPass.uniforms.bloomTexture.value=bloomComposer.renderTarget1.texture
+finalPass.uniforms.torusTexture.value=torusComposer.renderTarget1.texture
+
+// Storm points
+const count=50000,radius=2.5
+const pos=new Float32Array(count*3),sc=new Float32Array(count),no=new Float32Array(count),rp=new Float32Array(count),mx=new Float32Array(count)
+for(let i=0;i<count;i++){let u,v,s
+do{u=Math.random()*2-1;v=Math.random()*2-1;s=u*u+v*v}while(s>=1||s===0)
+const f=2*Math.sqrt(1-s),dx=u*f,dy=v*f,dz=1-2*s,rN=Math.pow(Math.random(),0.4),r=radius*(0.55+rN*0.45)
+pos[i*3]=dx*r;pos[i*3+1]=dy*r;pos[i*3+2]=dz*r;mx[i]=rN;sc[i]=0.45+Math.random()*0.8;no[i]=Math.random();rp[i]=0.4+rN*1.1}
+const geo=new THREE.BufferGeometry()
+geo.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));geo.setAttribute('aScale',new THREE.Float32BufferAttribute(sc,1))
+geo.setAttribute('aNoise',new THREE.Float32BufferAttribute(no,1));geo.setAttribute('aRadialPush',new THREE.Float32BufferAttribute(rp,1));geo.setAttribute('aMix',new THREE.Float32BufferAttribute(mx,1))
+const uniforms={uTime:{value:0},uSize:{value:80},uOpacity:{value:0},uBlowUp:{value:0},uCursor:{value:new THREE.Vector3()},uRepelRadius:{value:1.4},uRepelStrength:{value:4},uActivity:{value:0},
+uCore:{value:hexToVec3('#6a0a2a')},uMid:{value:hexToVec3('#ff2d6b')},uRim:{value:hexToVec3('#ffd36b')},uBrightness:{value:1.6}}
+const mat=new THREE.ShaderMaterial({uniforms,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
+vertexShader:`uniform float uTime; uniform float uSize; uniform float uBlowUp;
+uniform vec3 uCursor; uniform float uRepelRadius; uniform float uRepelStrength; uniform float uActivity;
+uniform vec3 uCore; uniform vec3 uMid; uniform vec3 uRim;
+attribute float aScale; attribute float aNoise; attribute float aRadialPush; attribute float aMix;
+varying vec3 vColor; varying float vBlowUp;
+void main() {
+  vec3 pos = position;
+  float t = uTime * 1.4 + aNoise * 6.2831;
+  float wobble = sin(t) * 0.1 * aRadialPush;
+  pos *= 1.0 + wobble;
+  float swirlAngle = uTime * 0.05 + aNoise * 6.2831;
+  mat2 swirl = mat2(cos(swirlAngle), -sin(swirlAngle), sin(swirlAngle), cos(swirlAngle));
+  pos.xz = swirl * pos.xz;
+  vec3 outward = normalize(pos + vec3(0.0001));
+  float blow = uBlowUp * uBlowUp;
+  pos += outward * blow * (10.0 + aNoise * 18.0) * aRadialPush;
+  vec4 modelPosition = modelMatrix * vec4(pos, 1.0);
+  vec3 toParticle = modelPosition.xyz - uCursor;
+  float dist = length(toParticle);
+  float falloff = smoothstep(uRepelRadius, 0.0, dist);
+  modelPosition.xyz += normalize(toParticle + vec3(0.0001)) * falloff * uRepelStrength * uActivity;
+  vec4 viewPosition = viewMatrix * modelPosition;
+  gl_Position = projectionMatrix * viewPosition;
+  gl_PointSize = uSize * aScale;
+  gl_PointSize *= (1.0 / -viewPosition.z);
+  float t1 = smoothstep(0.25, 0.85, aMix);
+  vec3 mix1 = mix(uCore, uMid, t1);
+  float t2 = clamp((aMix - 0.7) * 3.0, 0.0, 1.0);
+  vColor = mix(mix1, uRim, t2);
+  vBlowUp = uBlowUp;
+}`,
+fragmentShader:`uniform float uOpacity; uniform float uBrightness;
+varying vec3 vColor; varying float vBlowUp;
+void main() {
+  vec2 uv = gl_PointCoord - 0.5;
+  float d = length(uv);
+  if (d > 0.5) discard;
+  float strength = pow(1.0 - d * 2.0, 4.5);
+  vec3 color = mix(vec3(0.0), vColor, strength);
+  float blowFade = 1.0 - smoothstep(0.15, 1.0, vBlowUp);
+  gl_FragColor = vec4(color * uBrightness, strength * uOpacity * blowFade);
+}`})
+const stormPts=new THREE.Points(geo,mat);stormPts.layers.enable(L.ENTIRE_SCENE)
+const group=new THREE.Group();group.add(stormPts);scene.add(group)
+
+// Atmosphere motes
+const N=300,ap=new Float32Array(N*3),asz=new Float32Array(N),ase=new Float32Array(N)
+for(let i=0;i<N;i++){ap[i*3]=2*Math.random()-1;ap[i*3+1]=2*Math.random()-1;ap[i*3+2]=2*Math.random()-1;asz[i]=24*(0.4+Math.random());ase[i]=Math.random()}
+const ag=new THREE.BufferGeometry()
+ag.setAttribute('position',new THREE.Float32BufferAttribute(ap,3));ag.setAttribute('size',new THREE.Float32BufferAttribute(asz,1));ag.setAttribute('seed',new THREE.Float32BufferAttribute(ase,1))
+const atmoMat=new THREE.ShaderMaterial({transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,depthTest:false,
+uniforms:{uTime:{value:0},uColor:{value:hexToVec3('#ff7ab0')},uRes:{value:new THREE.Vector2(innerWidth*devicePixelRatio,innerHeight*devicePixelRatio)}},
+vertexShader:`attribute float size; attribute float seed; uniform float uTime; uniform vec2 uRes;
+varying float vA;
+vec3 warp(vec3 p, float t){ float c=0.9,a=1.9,b=0.02,s=0.05; p*=2.;
+  p.x+=c*sin(s*t+a*p.y)+t*b; p.y+=c*cos(s*t+a*p.x); p.y+=c*sin(s*t+a*p.z)+t*b;
+  p.z+=c*cos(s*t+a*p.y); p.z+=c*sin(s*t+a*p.x)+t*b; p.x+=c*cos(s*t+a*p.z);
+  return cos(p+vec3(1,2,4)); }
+void main(){
+  vec3 v = position*4.0 + warp(position, uTime)*1.2;
+  vec4 mv = modelViewMatrix * vec4(v, 1.0);
+  float r = length(v); float farF = 1.0 - smoothstep(5.0, 6.5, r); float nearF = smoothstep(0.0, 0.5, -mv.z);
+  vA = farF * nearF;
+  gl_PointSize = size * uRes.y / 900.0 / -mv.z; gl_PointSize = max(gl_PointSize, 1.0);
+  gl_Position = projectionMatrix * mv;
+}`,
+fragmentShader:`uniform vec3 uColor; varying float vA;
+void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) discard;
+  float tex = smoothstep(0.5, 0.0, l); gl_FragColor = vec4(uColor * tex, tex * vA * 0.6); }`})
+const atmo=new THREE.Points(ag,atmoMat);atmo.frustumCulled=false;atmo.layers.enable(L.ENTIRE_SCENE)
+atmo.onBeforeRender=()=>{const t=performance.now()/1000;atmoMat.uniforms.uTime.value=t*8;atmo.position.copy(camera.position);finalPass.uniforms.iTime.value=t}
+scene.add(atmo)
+
+// Interaction
+const Lerp=(a,b,t)=>a+(b-a)*t,clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v))
+let scrollTarget=0,scrollSmooth=0,scrollCurrent=0
+const mouseSmooth={x:0,y:0}
+const hero=document.getElementById('hero'),nameEl=document.getElementById('name'),hint=document.getElementById('hint')
+function updateScroll(){const max=hero.offsetHeight-innerHeight;scrollTarget=max>0?clamp(scrollY/max,0,1):0
+nameEl.classList.toggle('in',scrollTarget>0.92||scrollY>hero.offsetHeight-innerHeight*0.6);hint.style.display=scrollY>50?'none':''}
+addEventListener('scroll',updateScroll,{passive:true});updateScroll()
+const POINTER={ndc:new THREE.Vector2(),world:new THREE.Vector3(),activity:0,active:false,lastMove:performance.now()}
+addEventListener('mousemove',e=>{POINTER.ndc.x=e.clientX/innerWidth*2-1;POINTER.ndc.y=-(e.clientY/innerHeight*2-1);POINTER.active=true;POINTER.lastMove=performance.now()},{passive:true})
+addEventListener('mouseout',()=>{POINTER.active=false},{passive:true})
+const _n=new THREE.Vector3(),_d=new THREE.Vector3(),_t=new THREE.Vector3()
+function updatePointer(){_t.set(0,0,0)
+if(POINTER.active){_n.set(POINTER.ndc.x,POINTER.ndc.y,0.5).unproject(camera);_d.copy(_n).sub(camera.position).normalize()
+if(Math.abs(_d.z)>1e-4){const t=-camera.position.z/_d.z;if(t>0&&Number.isFinite(t))_t.copy(camera.position).addScaledVector(_d,t)}}
+POINTER.world.lerp(_t,0.12)
+const idle=(performance.now()-POINTER.lastMove)/1000
+POINTER.activity+=(((POINTER.active&&idle<3)?1:0)-POINTER.activity)*0.06}
+addEventListener('resize',()=>{renderer.setPixelRatio(devicePixelRatio);renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()
+for(const c of [torusComposer,bloomComposer,finalComposer]){c.setPixelRatio(devicePixelRatio);c.setSize(innerWidth,innerHeight)}
+atmoMat.uniforms.uRes.value.set(innerWidth*devicePixelRatio,innerHeight*devicePixelRatio);updateScroll()})
+
+let t0=performance.now()/1000;const appearStart=performance.now()
+function render(){requestAnimationFrame(render)
+scrollSmooth=Lerp(scrollSmooth,scrollTarget,0.10);scrollCurrent=Lerp(scrollCurrent,scrollSmooth,0.06)
+mouseSmooth.x=Lerp(mouseSmooth.x,POINTER.ndc.x,0.06);mouseSmooth.y=Lerp(mouseSmooth.y,POINTER.ndc.y,0.06)
+updatePointer()
+const scroll=scrollCurrent,m=mouseSmooth,t=performance.now()/1000,dt=Math.min(0.05,t-t0);t0=t
+uniforms.uTime.value=t
+camera.position.set(m.x*0.7,m.y*0.7,7-scroll*3);camera.lookAt(0,0,0)
+group.scale.setScalar(1+scroll*0.5)
+uniforms.uOpacity.value=clamp((performance.now()-appearStart-300)/1400,0,1)*2
+uniforms.uBlowUp.value=0;uniforms.uCursor.value.copy(POINTER.world);uniforms.uActivity.value=POINTER.activity
+group.rotation.y+=dt*(0.03+scroll*0.6);group.rotation.x+=dt*0.03*0.33
+camera.layers.set(L.TORUS_SCENE);torusComposer.render()
+camera.layers.set(L.BLOOM_SCENE);bloomComposer.render()
+camera.layers.set(L.ENTIRE_SCENE);finalComposer.render()}
+render()
+
+// ---------- Achievements ----------
+const $=id=>document.getElementById(id)
+const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+const ld=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}}
+let ach=ld('nk_ach',[])
+function drawAch(){const ul=$('ach');ul.innerHTML=''
+ach.forEach((a,i)=>{const li=document.createElement('li');const s=document.createElement('span');s.textContent='🏆 '+a
+const b=document.createElement('button');b.textContent='✕';b.onclick=()=>{ach.splice(i,1);sv('nk_ach',ach);drawAch()};li.append(s,b);ul.append(li)})}
+$('aa').onclick=()=>{const v=$('at').value.trim();if(!v)return;ach.push(v);$('at').value='';sv('nk_ach',ach);drawAch()}
+drawAch()
+// ---------- Pictures ----------
+$('pf').onchange=e=>{for(const f of e.target.files){const r=new FileReader();r.onload=()=>{const i=new Image();i.src=r.result;$('gal').append(i)};r.readAsDataURL(f)}}
+
+// ---------- Game ----------
+const cv=$('cv'),cx=cv.getContext('2d'),W=900,H=260,G=H-30,LV=105,PER=8
+let lb=ld('nk_lb',[]),run=false,pl,obs,lvl,passed,score,spd,nextX,frames,who='',duck=false
+function drawLb(){const t=$('lb');t.innerHTML='<tr><th>#</th><th>Player</th><th>Level</th><th>Score</th></tr>'
+lb.slice().sort((a,b)=>b.l-a.l||b.s-a.s).slice(0,15).forEach((r,i)=>{const tr=t.insertRow();[i+1,r.n+(r.l>=LV?' 👑':''),r.l,r.s].forEach(v=>tr.insertCell().textContent=v)})
+if(!lb.length)t.insertRow().insertCell().textContent='No players yet — be the first!'}
+drawLb()
+const spdOf=l=>Math.min(16,5+l*0.105)
+function gap(){const a=40*spd;return a+110+Math.random()*Math.max(50,280-lvl*2.4)}
+function spawn(){const r=Math.random(),max=Math.min(4,1+Math.floor(lvl/28))
+if(lvl>=6&&r<Math.min(0.4,0.12+lvl*0.004)){const hi=Math.random()<.5;obs.push({x:nextX,y:hi?G-48-22:G-14-22,w:38,h:22,b:1})}
+else{const n=1+Math.floor(Math.random()*max);let x=nextX;for(let i=0;i<n;i++){const h=24+Math.random()*(18+Math.min(22,lvl*.3));const w=14+Math.random()*10;obs.push({x,y:G-h,w,h});x+=w+3}}
+nextX+=gap()+(obs.length?0:0)}
+function start(){who=$('pn').value.trim();if(!who){$('pn').focus();$('hud').textContent='Please type your name first!';return}
+pl={y:G-34,vy:0,h:34};obs=[];lvl=1;passed=0;score=0;spd=spdOf(1);nextX=W+200;frames=0;run=true;duck=false;lastT=performance.now();loop()}
+function jump(){if(!run)return;if(pl.y>=G-pl.h-1)pl.vy=-12.8}
+function end(win){run=false;lb.push({n:who,l:lvl,s:score});sv('nk_lb',lb);drawLb()
+$('hud').textContent=(win?'🏆 YOU WON ALL 105 LEVELS! ':'Game over! ')+who+' — Level '+lvl+', Score '+score+'. Press Start to retry.'
+cx.fillStyle='#fff';cx.font='bold 28px sans-serif';cx.textAlign='center';cx.fillText(win?'YOU WIN!':'GAME OVER',W/2,H/2)}
+let lastT=0
+function loop(){if(!run)return;requestAnimationFrame(loop)
+const now=performance.now(),k=Math.min(2.5,(now-lastT)/16.67);lastT=now;frames+=k
+pl.h=duck&&pl.y>=G-pl.h-1?20:34
+pl.vy+=0.65*k*(duck&&pl.y<G-pl.h-1?1.8:1);pl.y+=pl.vy*k;if(pl.y>G-pl.h){pl.y=G-pl.h;pl.vy=0}
+for(const o of obs)o.x-=spd*k
+while(nextX<=W+250&&obs.length<30)spawn_wrap()
+function spawn_wrap(){spawn()}
+nextX-=spd*k
+for(let i=obs.length-1;i>=0;i--){const o=obs[i];if(o.x+o.w<40){obs.splice(i,1);if(!o.c){passed++;score+=10*lvl}
+}}
+// level up
+if(passed>=PER){passed=0;if(lvl>=LV){end(true);return}lvl++;spd=spdOf(lvl);score+=100}
+// collision
+const px=50+4,py=pl.y+4,pw=26,ph=pl.h-8
+for(const o of obs)if(px<o.x+o.w-3&&px+pw>o.x+3&&py<o.y+o.h-3&&py+ph>o.y+3){end(false);return}
+// draw
+cx.clearRect(0,0,W,H);cx.fillStyle='#ffd36b';cx.fillRect(0,G,W,2)
+for(let i=0;i<14;i++){cx.fillStyle='#ff2d6b55';cx.fillRect(((i*97-frames*spd*.3)%W+W)%W,G+10+(i%3)*6,16,2)}
+cx.fillStyle='#ff2d6b';cx.fillRect(50,pl.y,30,pl.h);cx.fillStyle='#fff';cx.fillRect(70,pl.y+5,5,5)
+const lf=Math.floor(frames/6)%2;if(pl.y>=G-pl.h-1){cx.fillStyle='#ffd36b';cx.fillRect(54+lf*10,G-4,8,4)}
+for(const o of obs){cx.fillStyle=o.b?'#ff7ab0':'#ffd36b';cx.fillRect(o.x,o.y,o.w,o.h);if(o.b){cx.fillStyle='#1a0418';cx.fillRect(o.x+4,o.y+5,5,5)}}
+cx.fillStyle='#fff';cx.font='bold 16px sans-serif';cx.textAlign='left';cx.fillText('Level '+lvl+'/'+LV+'   Score '+score,12,24)
+cx.fillStyle='#ffffff33';cx.fillRect(12,34,200,6);cx.fillStyle='#ff2d6b';cx.fillRect(12,34,200*passed/PER,6)
+$('hud').textContent='Player: '+who+'  |  Level '+lvl+' of '+LV}
+$('st').onclick=()=>{if(!run)start()}
+addEventListener('keydown',e=>{if(!run)return
+if(['Space','ArrowUp','ArrowDown'].includes(e.code))e.preventDefault()
+if(e.code==='Space'||e.code==='ArrowUp')jump();if(e.code==='ArrowDown')duck=true})
+addEventListener('keyup',e=>{if(e.code==='ArrowDown')duck=false})
+cv.addEventListener('pointerdown',e=>{if(run)jump()})
+</script></body></html>
